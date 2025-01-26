@@ -1,0 +1,25 @@
+[package]
+name = "script"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+octocrab = "0.38.0"
+whoami = "0.8"
+screenshots = "0.6.0"
+rand = "0.8.4"
+secrecy = "0.8.0"
+
+[target.'cfg(windows)'.dependencies]
+user32-sys = "0.2.0"
+
+
+[profile.release]
+strip = true  
+opt-level = "z" 
+lto = true
+codegen-units = 1
+panic = "abort"
+debuginfo=0
+Zstrip-debuginfo-if-disabled=true
