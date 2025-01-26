@@ -28,9 +28,9 @@ build the application on linux:
     cargo build --release --target x86_64-pc-windows-gnu 
 
 Usage
-Commands Supported in GitHub Issue Comments. you can uncommnet the first line in the script to make the cmd window not visible to the user. all interactions to the agents
+Commands Supported in GitHub Issue Comments. All interactions to the agents will be done from the issues dashboard
 
-
+    Note: you can uncommnet the first line in the script to make the cmd window not visible to the user.
     cmd: Execute a system command.
         Example: cmd dir
 
